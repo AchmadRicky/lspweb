@@ -104,7 +104,7 @@ if (!isset($_SESSION['level'])) {
               $jum = mysqli_num_rows($hasil);
                ?>
               <div class="display-4"><?php echo $jum; ?></div>
-              <a href="datauser.php"><p class="card-text text-white">Lihat Detail <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i></p></a>
+              <a href="data_aktivitas_manajer.php"><p class="card-text text-white">Lihat Detail <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i></p></a>
             </div>
           </div>
           <div class="card bg-success ml-5" style="width: 18rem;">
@@ -120,7 +120,7 @@ if (!isset($_SESSION['level'])) {
                ?>
               <h5 class="card-title">Data Transaksi</h5>
               <div class="display-4"><?php echo $jum; ?></div>
-              <a href="datapesanan.php"><p class="card-text text-white">Lihat Detail <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i></p></a>
+              <a href="data_transaksi.php"><p class="card-text text-white">Lihat Detail <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i></p></a>
             </div>
           </div>
           <div class="card bg-secondary ml-5 mt-5" style="width: 18rem;">

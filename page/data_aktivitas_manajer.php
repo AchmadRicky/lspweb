@@ -13,42 +13,46 @@
   </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-warning bg-warning fixed-top">
-      <h3><i class="fas fa-shopping-cart text-white mr-2"></i></h3>
-    <a class="navbar-brand font-weight-bold text-white" href="#">Dashboard Admin</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto ml-4">
-        <li class="nav-item">
-        </li>
-      </ul>
-      <div class="icon mt-2 mr-3">
-        <h5>
-            <a href="../proses/logout.php" style="color : #212529;"><i class="fas fa-sign-out-alt ml-3" data-toogle="tooltip" title="Logout"></i></a>
-        </h5>
-
+        <h3><i class="fas fa-shopping-cart text-white mr-2"></i></h3>
+        <a class="navbar-brand font-weight-bold text-white" href="#">Dashboard Manajer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto ml-4">
+            <li class="nav-item">
+            </li>
+        </ul>
+        <div class="icon mt-2 mr-3">
+            <h5>
+                <a href="../proses/logout.php" style="color : #212529;"><i class="fas fa-sign-out-alt ml-3" data-toogle="tooltip" title="Logout"></i></a>
+            </h5>
         </div>  
-     </div>
-   </nav>
-   <div class="row no-gutters mt-5">
-   <div class="col-md-2 mt-4 pt-3 bg-white">
-    <ul class="nav flex-column ml-3">
-      <li class="nav-item">
-        <a class="nav-link active" href="admin.php"><i class="fas fa-tachometer-alt mr-1"></i>Dashboard</a><hr>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="data_aktivitas.php"><i class="fas fa-store mr-1"></i>Data Aktivitas</a><hr>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="data_user.php"><i class="fas fa-user mr-1"></i>Data User</a><hr>
-      </li>
-    </ul>
-    </div>
+        </div>
+    </nav>
+    <div class="row no-gutters mt-5">
+        <div class="col-md-2 mt-4 pt-3 bg-white">
+        <ul class="nav flex-column ml-3">
+        <li class="nav-item">
+            <a class="nav-link active" href="manajer.php"><i class="fas fa-tachometer-alt mr-1"></i>Dashboard</a><hr>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="data_menu.php"><i class="fas fa-store mr-1"></i>Data Menu</a><hr>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="data_aktivitas_manajer.php"><i class="fas fa-user mr-1"></i>Data Aktivitas</a><hr>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="data_transaksi.php"><i class="fas fa-shopping-basket mr-1"></i>Data Transaksi</a><hr>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="data_pendapatan.php"><i class="fas fa-coins mr-1"></i></i>Data Pendapatan</a><hr>
+        </li>
+        </ul>
+        </div>
 
      <div class="col-md-10 p-5 pt-3">
-       <h3><i class="fas fa-store mr-2"></i>DATA AKTIVITAS</h3><hr>
+       <h3><i class="fas fa-user mr-2"></i>DATA AKTIVITAS</h3><hr>
         <table class="table table-bordered">
         <thead class="thead-dark">
           <tr>

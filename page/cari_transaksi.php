@@ -52,7 +52,7 @@
         </div>
 
      <div class="col-md-10 p-5 pt-3">
-      <form action="cari_transaksi.php" method="post">
+      <form action="" method="post">
        <h3><i class="fas fa-history mr-2"></i>Data Transaksi</h3><hr>
        <table class="table table-bordered">
         <thead class="thead-dark">
@@ -68,13 +68,20 @@
           </tr>
         </thead>
         <tbody>
-      <?php 
+        <?php 
         include "../proses/koneksi2.php";
-        $query = "SELECT * FROM transaksi";
+        if(isset($_POST['cari'])){
+            $_SESSION['pencarian']=$_POST['kasir'];
+            $keywoard = $_SESSION['pencarian'];
+          }else{
+            $keywoard = ['pencarian'];
+          }
+        $query = "SELECT * FROM transaksi WHERE nama_kasir = '$keywoard'";
         $hasil = mysqli_query($koneksi,$query);
         $no = 1;
         $jum = mysqli_num_rows($hasil);
         echo "Banyak Data : ".$jum."<br>";
+        if(mysqli_num_rows($hasil)){
         while ($data = mysqli_fetch_array($hasil)) {
       ?> 
           <tr>
@@ -88,6 +95,8 @@
             <td><a href="detail_transaksi.php?id_transaksi=<?php echo $data['id_transaksi'];?> ">Detail</a></td>
           </tr>
           <?php 
+        }}else{
+          echo "Tidak Ada Data";
         }
            ?>
         </tbody>

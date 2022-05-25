@@ -1,3 +1,19 @@
+<?php 
+$koneksi= new mysqli("localhost","root","","grafikacafe");
+$semuadata=array();
+$tanggalmulai="-";
+$tanggalselesai="-";
+if (isset($_POST['kirim'])) 
+{
+		$tanggalmulai = $_POST["tanggalmulai"];
+		$tanggalselesai = $_POST["tanggalselesai"];
+		$ambil = $koneksi->query("SELECT * FROM transaksi WHERE waktu BETWEEN '$tanggalmulai' AND '$tanggalselesai'");
+	   while ($pecah = $ambil->fetch_assoc()){
+	   
+		   $semuadata[]=$pecah;
+	   }
+	}
+ ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -68,28 +84,26 @@
           </tr>
         </thead>
         <tbody>
-      <?php 
-        include "../proses/koneksi2.php";
-        $query = "SELECT * FROM transaksi";
-        $hasil = mysqli_query($koneksi,$query);
-        $no = 1;
-        $jum = mysqli_num_rows($hasil);
-        echo "Banyak Data : ".$jum."<br>";
-        while ($data = mysqli_fetch_array($hasil)) {
-      ?> 
+      <?php $total=0; ?>
+      <?php foreach ($semuadata as $key => $value): ?>
+      
+      <?php $mengambil = $koneksi->query("SELECT * FROM transaksi ");
+      $pecahkan = $mengambil->fetch_assoc()
+          ?>
+      <?php $total+=$value["total_pembelian"];
+          ?>
           <tr>
-            <td><?php echo $no++; ?></td>
-            <td><?php echo $data['id_transaksi']; ?></td>
-            <td><?php echo $data['id_kasir']; ?></td>
-            <td><?php echo $data['nama_kasir']; ?></td>
-            <td>Rp.<?php echo number_format($data['total_pembelian']); ?></td>
-            <td><?php echo $data['meja']; ?></td>
-            <td><?php echo $data['waktu']; ?></td>
-            <td><a href="detail_transaksi.php?id_transaksi=<?php echo $data['id_transaksi'];?> ">Detail</a></td>
+            <td><?php echo $key++; ?></td>
+            <td><?php echo $value['id_transaksi']; ?></td>
+            <td><?php echo $value['id_kasir']; ?></td>
+            <td><?php echo $value['nama_kasir']; ?></td>
+            <td>Rp.<?php echo number_format($value['total_pembelian']); ?></td>
+            <td><?php echo $value['meja']; ?></td>
+            <td><?php echo $value['waktu']; ?></td>
+            <td><a href="detail_transaksi.php?id_transaksi=<?php echo $value['id_transaksi'];?> ">Detail</a></td>
           </tr>
-          <?php 
-        }
-           ?>
+
+           <?php endforeach ?>
         </tbody>
         <div class="row">
             <div class="col-md-3">

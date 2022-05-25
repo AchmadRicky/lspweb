@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2022 at 06:32 PM
+-- Generation Time: May 21, 2022 at 11:55 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.15
 
@@ -81,7 +81,10 @@ INSERT INTO `detail_transaksi` (`id_detail`, `id_transaksi`, `id_menu`, `nama_me
 (13, 11, 2, 'Bakmi', 12000, 1, 12000),
 (14, 12, 2, 'Bakmi', 12000, 1, 12000),
 (15, 13, 1, 'Nasi Goreng', 10000, 1, 10000),
-(16, 14, 2, 'Bakmi', 12000, 1, 12000);
+(16, 14, 2, 'Bakmi', 12000, 1, 12000),
+(17, 15, 1, 'Nasi Goreng', 10000, 1, 10000),
+(18, 15, 3, 'kopi', 8000, 1, 8000),
+(19, 15, 2, 'Bakmi', 12000, 1, 12000);
 
 -- --------------------------------------------------------
 
@@ -104,7 +107,10 @@ CREATE TABLE `log` (
 INSERT INTO `log` (`id_log`, `id_kasir`, `nama_kasir`, `waktu`, `keterangan`) VALUES
 (1, 4, 'kasir 2', '2022-05-18 18:03:46', 'Melakukan Transaksi Dengan id 12'),
 (2, 3, 'kasir 1', '2022-05-18 18:27:49', 'Melakukan Transaksi Dengan id 13'),
-(3, 3, 'kasir 1', '2022-05-18 18:28:08', 'Melakukan Transaksi Dengan id 14');
+(3, 3, 'kasir 1', '2022-05-18 18:28:08', 'Melakukan Transaksi Dengan id 14'),
+(4, 3, 'kasir 1', '2022-05-21 23:31:44', 'Melakukan Transaksi Dengan id 15'),
+(5, 3, 'kasir 1', '2022-05-21 23:31:44', 'Melakukan Transaksi Dengan id 15'),
+(6, 3, 'kasir 1', '2022-05-21 23:31:45', 'Melakukan Transaksi Dengan id 15');
 
 -- --------------------------------------------------------
 
@@ -125,9 +131,9 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id_menu`, `nama_menu`, `gambar`, `harga`, `stok`) VALUES
-(1, 'Nasi Goreng', 'nasi goreng.jpg', 10000, 89),
-(2, 'Bakmi', 'bakmi.jpg', 12000, 39),
-(3, 'kopi', 'kopi.jpeg', 8000, 15);
+(1, 'Nasi Goreng', 'nasi goreng.jpg', 10000, 88),
+(2, 'Bakmi', 'bakmi.jpg', 12000, 38),
+(3, 'kopi', 'kopi.jpeg', 8000, 14);
 
 -- --------------------------------------------------------
 
@@ -162,7 +168,8 @@ INSERT INTO `transaksi` (`id_transaksi`, `id_kasir`, `nama_kasir`, `total_pembel
 (11, 4, 'kasir 2', 12000, 1, '2022-05-18 18:02:49'),
 (12, 4, 'kasir 2', 12000, 1, '2022-05-18 18:03:46'),
 (13, 3, 'kasir 1', 10000, 1, '2022-05-18 18:27:49'),
-(14, 3, 'kasir 1', 12000, 2, '2022-05-18 18:28:08');
+(14, 3, 'kasir 1', 12000, 2, '2022-05-18 18:28:08'),
+(15, 3, 'kasir 1', 30000, 1, '2022-05-21 23:31:44');
 
 --
 -- Indexes for dumped tables
@@ -212,25 +219,25 @@ ALTER TABLE `akun`
 -- AUTO_INCREMENT for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `log`
 --
 ALTER TABLE `log`
-  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

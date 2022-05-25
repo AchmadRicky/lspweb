@@ -117,6 +117,24 @@
               <button class="btn btn-outline-primary mt-3 mb-3" type="submit" name="cari">Cari</button>
         </div>
       </form>
+      <form action="filter_tanggal_transaksi.php" method="post">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="form-group">
+            <label>Tanggal Mulai</label>
+            <input type="date" name="tanggalmulai" class="form-control" value="<?php echo $tanggalmulai?>">
+          </div>
+        </div>
+        <div class="col-md-5">
+          <label>Tanggal Selesai</label>
+          <input type="date" name="tanggalselesai" class="form-control" value="<?php echo $tanggalselesai?>">
+        </div>
+          <div class="col-md-2 mb-5">
+          <label>&nbsp;</label><br>
+          <button class="btn btn-primary" name="kirim">Lihat</button>
+        </div>
+        </div>
+      </form>
       </table>
      </div>
    </div>
